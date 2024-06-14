@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>국립한국교통대학교 특수교육ABA 전공</h1>
-    <h2>문제행동 우선순위 평가 도구</h2>
+    <h2>문제행동 우선순위 평가 도구 <span style="font-size: 0.8em;">(Cooper 등, 2007)</span></h2>
     
     <form id="behavior-form">
         <label for="name">대상자의 이름:</label>
@@ -32,12 +32,13 @@
     <button type="button" onclick="calculatePriority()">우선순위 계산</button>
     <button type="button" onclick="saveResults()">결과 저장</button>
 
+    <div style="position: absolute; bottom: 10px; right: 10px; font-size: small;">
+        Kim, Y. P.
+    </div>
+
     <h2>우선순위 결과:</h2>
     <div id="result-container"></div>
 
     <script src="script.js"></script>
-    <div style="position: absolute; bottom: 10px; right: 10px; font-size: small;">
-        Kim, Y. P.
-    </div>
 </body>
 </html>
