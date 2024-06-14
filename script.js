@@ -12,26 +12,28 @@ const criteria = [
 
 const behaviors = ["행동1", "행동2", "행동3", "행동4"];
 
-const container = document.getElementById("criteria-container");
+document.addEventListener("DOMContentLoaded", function() {
+    const container = document.getElementById("criteria-container");
 
-behaviors.forEach(behavior => {
-    const behaviorContainer = document.createElement("div");
-    behaviorContainer.innerHTML = `<h3>${behavior}</h3>`;
-    criteria.forEach((criterion, index) => {
-        const div = document.createElement("div");
-        div.innerHTML = `
-            <label>${criterion}</label>
-            <select id="${behavior}-${index}">
-                <option value="0">0=절대 그렇지 않다</option>
-                <option value="1">1=거의 그렇지 않다</option>
-                <option value="2">2=가끔 그렇다</option>
-                <option value="3">3=자주 그렇다</option>
-                <option value="4">4=항상 그렇다</option>
-            </select>
-        `;
-        behaviorContainer.appendChild(div);
+    behaviors.forEach(behavior => {
+        const behaviorContainer = document.createElement("div");
+        behaviorContainer.innerHTML = `<h3>${behavior}</h3>`;
+        criteria.forEach((criterion, index) => {
+            const div = document.createElement("div");
+            div.innerHTML = `
+                <label>${criterion}</label>
+                <select id="${behavior}-${index}">
+                    <option value="0">0=절대 그렇지 않다</option>
+                    <option value="1">1=거의 그렇지 않다</option>
+                    <option value="2">2=가끔 그렇다</option>
+                    <option value="3">3=자주 그렇다</option>
+                    <option value="4">4=항상 그렇다</option>
+                </select>
+            `;
+            behaviorContainer.appendChild(div);
+        });
+        container.appendChild(behaviorContainer);
     });
-    container.appendChild(behaviorContainer);
 });
 
 function calculatePriority() {
