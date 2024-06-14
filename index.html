@@ -9,8 +9,27 @@
 <body>
     <h1>국립한국교통대학교 특수교육ABA 전공</h1>
     <h2>문제행동 우선순위 평가 도구</h2>
-    <div id="criteria-container"></div>
-    <button onclick="calculatePriority()">우선순위 계산</button>
+    
+    <form id="behavior-form">
+        <label for="name">대상자의 이름:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="behavior1">행동1:</label>
+        <input type="text" id="behavior1" name="behavior1" required><br><br>
+
+        <label for="behavior2">행동2:</label>
+        <input type="text" id="behavior2" name="behavior2" required><br><br>
+
+        <label for="behavior3">행동3:</label>
+        <input type="text" id="behavior3" name="behavior3" required><br><br>
+
+        <label for="behavior4">행동4:</label>
+        <input type="text" id="behavior4" name="behavior4" required><br><br>
+
+        <button type="button" onclick="calculatePriority()">우선순위 계산</button>
+        <button type="button" onclick="saveResults()">결과 저장</button>
+    </form>
+
     <h2>우선순위 결과:</h2>
     <div id="result-container"></div>
 

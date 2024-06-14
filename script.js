@@ -54,3 +54,29 @@ function calculatePriority() {
         resultContainer.appendChild(result);
     });
 }
+
+function saveResults() {
+    const name = document.getElementById("name").value;
+    const behavior1 = document.getElementById("behavior1").value;
+    const behavior2 = document.getElementById("behavior2").value;
+    const behavior3 = document.getElementById("behavior3").value;
+    const behavior4 = document.getElementById("behavior4").value;
+
+    let resultText = `대상자의 이름: ${name}\n\n`;
+    resultText += `행동1: ${behavior1}\n`;
+    resultText += `행동2: ${behavior2}\n`;
+    resultText += `행동3: ${behavior3}\n`;
+    resultText += `행동4: ${behavior4}\n\n`;
+
+    const resultContainer = document.getElementById("result-container");
+    const results = resultContainer.querySelectorAll("p");
+    results.forEach(result => {
+        resultText += result.textContent + "\n";
+    });
+
+    const blob = new Blob([resultText], { type: "text/plain;charset=utf-8" });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "우선순위_결과.txt";
+    link.click();
+}
