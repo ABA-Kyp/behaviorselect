@@ -7,7 +7,6 @@ const criteria = [
     "목표행동의 변화가 다른 사람들로부터 부적절하거나 원하지 않는 관심을 줄일 수 있는가?",
     "이 행동의 변화가 또래나 선생님으로부터 더 많은 강화를 받을 수 있게 하는가?",
     "이 행동의 변화가 얼마나 성공적일 수 있는가?",
-    "얼마나 많은 비용을 지불해야 하는가? (비용대비 효율성)"
 ];
 
 const behaviors = ["행동1", "행동2", "행동3", "행동4"];
@@ -23,9 +22,9 @@ document.addEventListener("DOMContentLoaded", function() {
             div.innerHTML = `
                 <label>${criterion}</label>
                 <select id="${behavior}-${index}">
-                    <option value="0">0=절대 그렇지 않다</option>
-                    <option value="1">1=거의 그렇지 않다</option>
-                    <option value="2">2=가끔 그렇다</option>
+                    <option value="0">0=전혀 아니다</option>
+                    <option value="1">1=드물게 그렇다</option>
+                    <option value="2">2=종종 그렇다</option>
                     <option value="3">3=자주 그렇다</option>
                     <option value="4">4=항상 그렇다</option>
                 </select>
